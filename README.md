@@ -17,6 +17,18 @@ libraries listed in `src/tezos-deps.opam`.
 The best way to install all dependencies is by first installing
 [OPAM](https://opam.ocaml.org/), the OCaml package manager.
 
+Potential Pre-requisites:
+```
+sudo apt-get install libev-dev
+#in project directory
+git clone https://github.com/jedisct1/libsodium --branch stable
+cd libsodium
+env CC=ccomp CFLAGS="-O2 -fstruct-passing" ./configure && \                                                                  make check && sudo make install
+
+```
+
+
+
 Create a new switch alias for Tezos. A switch is your own version of the OPAM
 configuration, including the OCaml compiler, all packages, and package manager
 configuration related to your project. This is necessary so that the project
